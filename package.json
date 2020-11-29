@@ -21,12 +21,14 @@
     "@material-ui/core": "^4.11.1",
     "angular": "^1.6.3",
     "body-parser": "^1.17.2",
+    "bootstrap": "^4.5.3",
     "cors": "^2.8.5",
     "express": "^4.15.0",
     "jquery": "^3.1.1",
     "mongoose": "^5.10.16",
     "mysql": "^2.13.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
   }
 }

@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import $ from 'jquery';
-import AddItems from './components/AddItems.jsx';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import $ from "jquery";
+import AddItems from "./components/AddItems.jsx";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -10,37 +10,12 @@ class App extends React.Component {
       items: []
     }
   }
-  submit (newItem){
-    console.log(newItem)
-    $.ajax({
-      url: "/tasks",
-      method: "POST",
-      data:{items : newItem},
-      dataType: "json",
-      success:function () {console.log("post method succeeded")},
-      error: function () {console.log("post method failed")}
-    });
-  }
-  // submit() {
-  //   $.ajax({
-  //     url: '/items',
-  //     success: (data) => {
-  //       this.setState({
-  //         items: data
-  //       })
-  //     },
-  //     error: (err) => {
-  //       console.log('err', err);
-  //     }
-  //   });
-  // }
-
   render () {
-    return (<div>
-      <h1>quote</h1>
-      <AddItems onSubmit={this.submit.bind(this)}/>
-    </div>)
-  }
+    return (
+    <Router>
+    <Navbar/>
+    <Route path = "./components/AddItems" exact component={AddItems} />
+    </Router>
+    )};
 }
-
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById("app"));

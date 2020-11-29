@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 
 var app = express();
 var port = process.env.PORT|| 3000;
-// app.use(express.static(__dirname + '/../react-client/dist'));
+app.use(express.static(__dirname + '/../react-client/dist'));
 app.use(cors());
 // app.use(bodyParser.json());
 app.use(express.json());
